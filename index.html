@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Cairo', sans-serif;
-            background-image: url('');
+            background-image: url('https://example.com/background.jpg'); /* خلفية احترافية */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -173,6 +173,9 @@
                     }
                 } else {
                     const response = await fetch(`https://tcms2.pythonanywhere.com/Chatgpt/text=${encodeURIComponent(userMessage)}`);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
                     const result = await response.json();
                     botEntry.textContent = 'الذكاء الاصطناعي: ' + result.message;
                     botEntry.style.color = '#333';
