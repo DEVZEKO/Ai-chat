@@ -181,9 +181,9 @@
                     botEntry.style.color = '#333';
                 }
             } catch (error) {
-                botEntry.textContent = 'خطأ: تعذر الاتصال بالخادم.';
+                botEntry.textContent = 'خطأ: تعذر الاتصال بالخادم. ' + error.message;
                 botEntry.style.color = 'red';
-                console.error(error);
+                console.error('Error:', error);
             }
         }
     </script>
